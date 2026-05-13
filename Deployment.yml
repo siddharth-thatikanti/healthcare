@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yourhealthai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yourhealthai
+  template:
+    metadata:
+      labels:
+        app: yourhealthai
+    spec:
+      containers:
+      - name: yourhealthai
+        image: yourhealthai:latest
+        ports:
+        - containerPort: 80
